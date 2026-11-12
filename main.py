@@ -11,6 +11,9 @@ from logger import log_state
 def main():
     pygame.init()
 
+    clock = pygame.time.Clock()
+    dt = 0.0 # meaning 'delta'
+
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
@@ -23,6 +26,12 @@ def main():
         for event in pygame.event.get(): # refer/acknoledge this as the event queue
             if event.type == pygame.QUIT:
                 return
+
+        clock.tick(60)
+        dt = clock.tick(60) / 1000
+                                    # line 32, added a print statement here to test the flucation of CPU speeds
+
+
 
     screen.fill(black)
 
