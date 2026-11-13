@@ -1,3 +1,4 @@
+import pygame
 import inspect
 import json
 import math

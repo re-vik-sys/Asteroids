@@ -5,11 +5,20 @@ from constants import SCREEN_WIDTH
 from constants import SCREEN_HEIGHT
 
 import logger
-
 from logger import log_state
+
+import player
+from player import Player
+
+import circleshape
+from circleshape import CircleShape
+
 
 def main():
     pygame.init()
+
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2) # boot this line right here is stating that im missing a rotation argument
+
 
     clock = pygame.time.Clock()
     dt = 0.0 # meaning 'delta'
@@ -27,15 +36,15 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        clock.tick(60)
+
         dt = clock.tick(60) / 1000
-                                    # line 32, added a print statement here to test the flucation of CPU speeds
+                                    # line 40, added a print statement here to test the flucation of CPU speeds
+        screen.fill("black")
+        player.draw(screen)
+        pygame.display.flip() # be advised to always to call this last as it refreshes the screen
 
 
 
-    screen.fill(black)
-
-    display.flip() # be advised to always to call this last as it refreshes the screen
 
 
 if __name__ == "__main__":
