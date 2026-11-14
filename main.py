@@ -37,7 +37,9 @@ def main():
 
 
         dt = clock.tick(60) / 1000
-                                    # line 40, added a print statement here to test the flucation of CPU speeds
+
+        player.update(dt)
+                                    # line 42, added a print statement here to test the flucation of CPU speeds
         screen.fill("black")
         player.draw(screen)
         pygame.display.flip() # be advised to always to call this last as it refreshes the screen
