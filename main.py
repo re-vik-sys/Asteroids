@@ -1,8 +1,7 @@
 import pygame
 
 import constants
-from constants import SCREEN_WIDTH
-from constants import SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_TURN_SPEED
 
 import logger
 from logger import log_state
@@ -17,7 +16,7 @@ from circleshape import CircleShape
 def main():
     pygame.init()
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2) # boot this line right here is stating that im missing a rotation argument
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
 
     clock = pygame.time.Clock()
