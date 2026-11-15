@@ -32,6 +32,7 @@ def main():
     drawable = pygame.sprite.Group()
 
     player.containers(updatable, drawable)
+    updatable.update()
 
     while True:
         log_state()
@@ -43,10 +44,13 @@ def main():
 
         dt = clock.tick(60) / 1000
 
+        for i in drawable:
+            i.fill("black")
+            i.draw(screen)
+
+
         updatable.update(dt)
-                                    # line 42, added a print statement here to test the flucation of CPU speeds
-        screen.fill("black")
-        player.draw(screen)
+
         pygame.display.flip() # be advised to always to call this last as it refreshes the screen
 
 
