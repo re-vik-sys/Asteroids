@@ -16,6 +16,11 @@ from circleshape import CircleShape
 def main():
     pygame.init()
 
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers(updatable, drawable)
+
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
 
@@ -28,11 +33,8 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
-    updatable = pygame.sprite.Group()
-    drawable = pygame.sprite.Group()
 
-    player.containers(updatable, drawable)
-    updatable.update()
+
 
     while True:
         log_state()
@@ -44,10 +46,9 @@ def main():
 
         dt = clock.tick(60) / 1000
 
+        screen.fill("black")
         for i in drawable:
-            i.fill("black")
             i.draw(screen)
-
 
         updatable.update(dt)
 
