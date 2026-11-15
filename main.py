@@ -28,6 +28,11 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    player.containers(updatable, drawable)
+
     while True:
         log_state()
 
@@ -38,7 +43,7 @@ def main():
 
         dt = clock.tick(60) / 1000
 
-        player.update(dt)
+        updatable.update(dt)
                                     # line 42, added a print statement here to test the flucation of CPU speeds
         screen.fill("black")
         player.draw(screen)
