@@ -5,7 +5,7 @@ from circleshape import CircleShape
 
 import constants
 from constants import LINE_WIDTH, PLAYER_RADIUS, PLAYER_TURN_SPEED, PLAYER_SPEED
-# from constants import LINE_WIDTH | saving this if i need it for later
+
 
 class Player(CircleShape):
     def __init__(self, x, y):
@@ -36,7 +36,6 @@ class Player(CircleShape):
             self.move(dt)
         if keys[pygame.K_s]:
             self.move(-dt)
-
 
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
