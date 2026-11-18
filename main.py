@@ -19,7 +19,6 @@ from asteroid import Asteroid
 import asteroidfield
 from asteroidfield import AsteroidField
 
-
 def main():
     pygame.init()
 
