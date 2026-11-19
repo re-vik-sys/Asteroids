@@ -57,7 +57,6 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-
         dt = clock.tick(60) / 1000
 
         screen.fill("black")
