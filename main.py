@@ -72,6 +72,24 @@ def main():
                 sys.exit()
 
 
+        for a in asteroids:
+            for i in shots:
+                if a.collides_with(i):
+                    log_event("asteroid_shot")
+                    a.kill()
+                    i.kill()
+
+
+
+
+
+
+
+
+
+
+
+
 
         pygame.display.flip() # be advised to always to call this last as it refreshes the screen
 
